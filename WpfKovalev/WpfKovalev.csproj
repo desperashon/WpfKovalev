@@ -55,7 +55,55 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Pages\BasketPage.xaml.cs">
+      <DependentUpon>BasketPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CatalogPage.xaml.cs">
+      <DependentUpon>CatalogPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ComfigPage.xaml.cs">
+      <DependentUpon>ComfigPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FeedbackPage.xaml.cs">
+      <DependentUpon>FeedbackPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MidWindow.xaml.cs">
+      <DependentUpon>MidWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RegistrWindow.xaml.cs">
+      <DependentUpon>RegistrWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Pages\BasketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CatalogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ComfigPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FeedbackPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,10 +111,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\MidWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RegistrWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +149,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Скриншот 20-01-2024 124749.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\icons8-пользователь-мужчина-в-кружке-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\icons8-dog-house-32.png" />
+    <Resource Include="Resources\Image\image 1.png" />
+    <Resource Include="Resources\Image\image 2.png" />
+    <Resource Include="Resources\Image\image 3.png" />
+    <Resource Include="Resources\Image\Vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Ellipse 1 %28Stroke%29.png" />
+    <Resource Include="Resources\Image\image 4.png" />
+    <Resource Include="Resources\Image\image.png" />
+    <Resource Include="Resources\Image\Rectangle 25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\free-icon-computer-part-10538269 1.png" />
+    <Resource Include="Resources\Image\free-icon-cooler-7815005 1.png" />
+    <Resource Include="Resources\Image\free-icon-graphics-card-2000522 1.png" />
+    <Resource Include="Resources\Image\free-icon-motherboard-5921796 1.png" />
+    <Resource Include="Resources\Image\free-icon-processor-1086685 1.png" />
+    <Resource Include="Resources\Image\free-icon-ram-memory-3785967 1.png" />
+    <Resource Include="Resources\Image\free-icon-tower-pc-2492254 1.png" />
+    <Resource Include="Resources\Image\hdd_icon_160049 1.png" />
+    <Resource Include="Resources\Image\ssd_hard_drive_storage_drive_icon_190954 1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

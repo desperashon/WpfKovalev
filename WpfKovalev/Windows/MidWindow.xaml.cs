@@ -10,19 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfKovalev.Pages;
 
-namespace WpfKovalev
+namespace WpfKovalev.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MidWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MidWindow : Window
     {
-        public MainWindow()
+        public MidWindow()
         {
             InitializeComponent();
+            MainFrm.Navigate(new HomePage());
         }
     }
 }

@@ -1,0 +1,98 @@
+﻿<Page x:Class="WpfKovalev.Pages.CatalogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfKovalev.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="670" d:DesignWidth="360"
+      Title="CatalogPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Каталог"
+        FontSize="30"
+        Grid.ColumnSpan="2"
+        HorizontalContentAlignment="Center"/>
+        <Button Name="DiskiBtn"
+         Grid.Row="10"
+         Grid.Column="1"
+         Content="Жесткие диски" 
+         FontSize="15"
+         Margin="10"/>
+        <Button Name="ProcBtn"
+  Grid.Row="2"
+  Grid.Column="1"
+  Content="Процессоры" 
+  FontSize="15"
+         Margin="10"/>
+        <Button Name="MatBtn"
+  Grid.Row="3"
+  Grid.Column="1"
+  Content="Материнские платы" 
+  FontSize="15"
+         Margin="10"/>
+        <Button Name="VideoBtn"
+  Grid.Row="4"
+  Grid.Column="1"
+  Content="Видеокарты" 
+  FontSize="15"
+         Margin="10"/>
+        <Button Name="OperativBtn"
+  Grid.Row="5"
+  Grid.Column="1"
+  Content="Оперативная память" 
+  FontSize="15"
+         Margin="10"/>
+        <Button Name="KorpusBtn"
+  Grid.Row="6"
+  Grid.Column="1"
+  Content="Корпуса" 
+  FontSize="15"
+         Margin="10"/>
+        <Button Name="PitBtn"
+  Grid.Row="7"
+  Grid.Column="1"
+  Content="Блоки питания" 
+  FontSize="15"
+         Margin="10"/>
+        <Button Name="OhladBtn"
+  Grid.Row="8"
+  Grid.Column="1"
+  Content="Охлаждение компьютера" 
+  FontSize="15"
+         Margin="10"/>
+        <Button Name="NakopBtn"
+  Grid.Row="9"
+  Grid.Column="1"
+  Content="Твердотельные накопители" 
+  FontSize="15"
+         Margin="10"/>
+        <Image Grid.Row="8" Source="/Resources/Image/free-icon-cooler-7815005 1.png" />
+        <Image Grid.Row="4" Source="/Resources/Image/free-icon-graphics-card-2000522 1.png" />
+        <Image Grid.Row="3" Source="/Resources/Image/free-icon-motherboard-5921796 1.png" />
+        <Image Grid.Row="2" Source="/Resources/Image/free-icon-processor-1086685 1.png" />
+        <Image Grid.Row="5" Source="/Resources/Image/free-icon-ram-memory-3785967 1.png" />
+        <Image Grid.Row="6" Source="/Resources/Image/free-icon-tower-pc-2492254 1.png" />
+        <Image Grid.Row="10" Source="/Resources/Image/hdd_icon_160049 1.png" />
+        <Image Grid.Row="9" Source="/Resources/Image/ssd_hard_drive_storage_drive_icon_190954 1.png" />
+        <Image Grid.Row="7" Source="/Resources/Image/free-icon-computer-part-10538269 1.png" />
+
+    </Grid>
+</Page>

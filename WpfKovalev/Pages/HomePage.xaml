@@ -1,0 +1,51 @@
+﻿<Page x:Class="WpfKovalev.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfKovalev.Pages"
+      mc:Ignorable="d" 
+     d:DesignHeight="670" d:DesignWidth="360"
+     >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Что мы можем?!" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontSize="32" FontWeight="SemiBold"/>
+        <Label VerticalAlignment="Top" Content="Чем мы занимаемся?" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" />
+        <TextBlock  VerticalAlignment="Center" Text="Помогаем собрать пк вашей мечты, за приемлемую стоимость. поможем с выбором комплектующих либо же соберите сами." Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" />
+        <Button Name="ConfigBtn"
+                Grid.Row="1"
+                Grid.Column="1"
+                Height="40"
+                VerticalAlignment="Bottom"
+                Content="Собрать самому"/>
+        <TextBlock TextWrapping="Wrap" 
+                   Text="Так же можете купить отдельные комплектующие и конечно проконсультировать у нас "
+                   Grid.Row="2"/>
+        <Button Content="Перейти в каталог"
+                Height="40"
+                Grid.Row="2"
+                VerticalAlignment="Bottom"/>
+        <Label Content="Партнеры - топовые бренды"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   HorizontalContentAlignment="Center"
+               FontSize="20"
+               FontWeight="SemiBold"/>
+
+        <Image Source="/Resources/Image/Rectangle 25.png" Grid.Row="1" Margin="0,0,42,0" />
+        <Image Source="/Resources/Image/Ellipse 1 (Stroke).png" Margin="0,42,109,42" Grid.Row="3" />
+<Image Source="/Resources/Image/image.png" Margin="-11,30,31,156" Grid.RowSpan="2" Grid.Row="1" />
+        <Image Source="/Resources/Image/image 4.png" Grid.Column="1" Margin="9,5,4,162" Grid.RowSpan="2" Grid.Row="2" />
+
+
+    </Grid>
+</Page>
