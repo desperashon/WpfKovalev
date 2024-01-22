@@ -24,5 +24,51 @@ namespace WpfKovalev.Pages
         {
             InitializeComponent();
         }
+
+        private void DiskiBtn_Click(object sender, RoutedEventArgs e)
+        {
+           NavigationService.Navigate(new Uri("Pages/DislPage.xaml", UriKind.Relative));
+        }
+
+        private void ProcBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/ProcPage.xaml", UriKind.Relative));
+        }
+
+        private void MatBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/MatPage.xaml", UriKind.Relative));
+        }
+
+        private void VideoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/VidPage.xaml", UriKind.Relative));
+        }
+
+        private void OperativBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/OperatPage.xaml", UriKind.Relative));
+        }
+
+        private void KorpusBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/KorpusPage.xaml", UriKind.Relative));
+        }
+
+        private void PitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/PitPage.xaml", UriKind.Relative));
+        }
+
+        private void OhladBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/OhladPage.xaml", UriKind.Relative));
+
+        }
+
+        private void NakopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/TverdNakopPage.xaml", UriKind.Relative));
+        }
     }
 }

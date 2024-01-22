@@ -7,8 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="670" d:DesignWidth="360"
       Title="CatalogPage">
-
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="0" />
@@ -26,6 +26,7 @@
             <ColumnDefinition Width="75" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
+       
         <Label Content="Каталог"
         FontSize="30"
         Grid.ColumnSpan="2"
@@ -35,55 +36,73 @@
          Grid.Column="1"
          Content="Жесткие диски" 
          FontSize="15"
-         Margin="10"/>
+         Margin="10"
+                Click="DiskiBtn_Click"/>
+        
         <Button Name="ProcBtn"
   Grid.Row="2"
   Grid.Column="1"
   Content="Процессоры" 
   FontSize="15"
-         Margin="10"/>
+         Margin="10" 
+                Click="ProcBtn_Click"/>
+        
         <Button Name="MatBtn"
   Grid.Row="3"
   Grid.Column="1"
   Content="Материнские платы" 
   FontSize="15"
-         Margin="10"/>
+         Margin="10"
+                Click="MatBtn_Click"/>
+        
         <Button Name="VideoBtn"
   Grid.Row="4"
   Grid.Column="1"
   Content="Видеокарты" 
   FontSize="15"
-         Margin="10"/>
+         Margin="10"
+                Click="VideoBtn_Click"/>
+        
         <Button Name="OperativBtn"
   Grid.Row="5"
   Grid.Column="1"
   Content="Оперативная память" 
   FontSize="15"
-         Margin="10"/>
+         Margin="10"
+                Click="OperativBtn_Click"/>
+        
         <Button Name="KorpusBtn"
   Grid.Row="6"
   Grid.Column="1"
   Content="Корпуса" 
   FontSize="15"
-         Margin="10"/>
+         Margin="10"
+                Click="KorpusBtn_Click"/>
+        
         <Button Name="PitBtn"
   Grid.Row="7"
   Grid.Column="1"
   Content="Блоки питания" 
   FontSize="15"
-         Margin="10"/>
+         Margin="10"
+                Click="PitBtn_Click"/>
+        
         <Button Name="OhladBtn"
   Grid.Row="8"
   Grid.Column="1"
   Content="Охлаждение компьютера" 
   FontSize="15"
-         Margin="10"/>
+         Margin="10"
+                Click="OhladBtn_Click"/>
+        
         <Button Name="NakopBtn"
   Grid.Row="9"
   Grid.Column="1"
   Content="Твердотельные накопители" 
   FontSize="15"
-         Margin="10"/>
+         Margin="10" 
+                Click="NakopBtn_Click"/>
+        
         <Image Grid.Row="8" Source="/Resources/Image/free-icon-cooler-7815005 1.png" />
         <Image Grid.Row="4" Source="/Resources/Image/free-icon-graphics-card-2000522 1.png" />
         <Image Grid.Row="3" Source="/Resources/Image/free-icon-motherboard-5921796 1.png" />

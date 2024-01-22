@@ -15,7 +15,7 @@
         <Image Source="/Resources/Image/Скриншот 20-01-2024 124749.jpg" Stretch="Fill" Grid.Row="1"/>
         <Grid Background="#E05950">
             <Image HorizontalAlignment="Center"  Stretch="Uniform" Source="/Resources/Image/logo.png" />
-            <Button Width="60" HorizontalAlignment="Right">
+            <Button Name="ProfileBtn" Click="ProfileBtn_Click" Width="60" HorizontalAlignment="Right">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Image/icons8-пользователь-мужчина-в-кружке-50.png">
                     </ImageBrush>
@@ -34,7 +34,7 @@
                 <RowDefinition Height="50" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
-            <Button   Height="50" Grid.Column="0" Grid.Row="0">
+            <Button   Height="50" Grid.Column="0" Grid.Row="0" Name="HomeBtn" Click="HomeBtn_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="\Resources\Image\icons8-dog-house-32.png" Stretch="Uniform">
                     </ImageBrush>
@@ -42,7 +42,7 @@
             </Button>
             <Label Grid.Row="1" HorizontalContentAlignment="Center" Grid.Column="0" FontSize="5" Content="Домашний экран"  VerticalAlignment="Top"    Height="18"/>
             
-            <Button   Height="50" Grid.Column="1" Grid.Row="0">
+            <Button Name="ConfigBtn"  Click="ConfigBtn_Click"  Height="50" Grid.Column="1" Grid.Row="0">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Image/image 1.png" 
                         Stretch="Uniform">
@@ -51,7 +51,7 @@
             </Button>
             <Label HorizontalContentAlignment="Center" Grid.Column="1" FontSize="5" Content="Cобрать Пк"  VerticalAlignment="Top" Grid.Row="2"  Height="18"/>
             
-            <Button   Height="50" Grid.Column="2" Grid.Row="0">
+            <Button Name="CatalogBtn" Click="CatalogBtn_Click"  Height="50" Grid.Column="2" Grid.Row="0">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Image/image 2.png" Stretch="Uniform">
                     </ImageBrush>
@@ -59,7 +59,7 @@
             </Button>
             <Label HorizontalContentAlignment="Center" Grid.Column="2" FontSize="5" Content="Каталог"  VerticalAlignment="Top" Grid.Row="2"  Height="18"/>
            
-            <Button   Height="50" Grid.Column="3" Grid.Row="0">
+            <Button Name="BasketBtn" Click="BasketBtn_Click"  Height="50" Grid.Column="3" Grid.Row="0">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Image/Vector.png" 
                         Stretch="Uniform">
@@ -68,7 +68,7 @@
             </Button>
             <Label HorizontalContentAlignment="Center" Grid.Column="3" FontSize="5" Content="Корзина"  VerticalAlignment="Top" Grid.Row="2"  Height="18"/>
             
-            <Button   Height="50" Grid.Column="4" Grid.Row="0">
+            <Button Name="FeedBackBtn" Click="FeedBackBtn_Click"  Height="50" Grid.Column="4" Grid.Row="0">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Image/image 3.png" Stretch="Uniform">
                     </ImageBrush>

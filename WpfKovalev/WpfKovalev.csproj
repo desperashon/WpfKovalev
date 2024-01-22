@@ -64,14 +64,41 @@
     <Compile Include="Pages\ComfigPage.xaml.cs">
       <DependentUpon>ComfigPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DislPage.xaml.cs">
+      <DependentUpon>DislPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FeedbackPage.xaml.cs">
       <DependentUpon>FeedbackPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\KorpusPage.xaml.cs">
+      <DependentUpon>KorpusPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MatPage.xaml.cs">
+      <DependentUpon>MatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OhladPage.xaml.cs">
+      <DependentUpon>OhladPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OperatPage.xaml.cs">
+      <DependentUpon>OperatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PitPage.xaml.cs">
+      <DependentUpon>PitPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProcPage.xaml.cs">
+      <DependentUpon>ProcPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TverdNakopPage.xaml.cs">
+      <DependentUpon>TverdNakopPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VidPage.xaml.cs">
+      <DependentUpon>VidPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MidWindow.xaml.cs">
       <DependentUpon>MidWindow.xaml</DependentUpon>
@@ -91,6 +118,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DislPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\FeedbackPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,7 +130,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\KorpusPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OhladPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OperatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PitPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProcPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TverdNakopPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\VidPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
