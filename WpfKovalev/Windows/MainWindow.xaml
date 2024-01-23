@@ -21,10 +21,11 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Image Source="/Resources/Image/Скриншот 20-01-2024 124749.jpg" Stretch="Fill" Grid.RowSpan="11" />
+        
         <Image Source="/Resources/Image/logo.png" Grid.RowSpan="2" />
         <Label Grid.Row="2" Content="Логин" />
         <Label Grid.Row="4" Content="Пароль" />
-        <TextBox Name="LoginBtn" Grid.Row="3" FontStretch="Normal" Height="60" Margin="10" Style="{StaticResource DefaultTextBoxStyle}"/>
+        <TextBox Name="LoginTb" Grid.Row="3" FontStretch="Normal" Height="60" Margin="10" Style="{StaticResource DefaultTextBoxStyle}"/>
         <PasswordBox PasswordChar="*" Name="PasswordPb" Grid.Row="5" FontStretch="Normal" Height="60" Margin="10"/>
         <Button Content="Войти"
                 Grid.Row="7"
@@ -40,6 +41,7 @@
                 Grid.Row="9"
                 Content="Заарегистрироваться"
                 Height="60"
-                Margin="10"/>
+                Margin="10"
+                Click="registrBtn_Click"/>
     </Grid>
 </Window>

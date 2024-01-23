@@ -24,5 +24,15 @@ namespace WpfKovalev.Pages
         {
             InitializeComponent();
         }
+
+        private void ConfigBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages\\ComfigPage.xaml", UriKind.Relative));
+        }
+
+        private void CatalogBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages\\CatalogPage.xaml", UriKind.Relative));
+        }
     }
 }

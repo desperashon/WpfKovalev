@@ -13,21 +13,123 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <ListView Name="EarlierPositionsLV"
-        Grid.Row="1"
-        FontSize="15"
-        Foreground="Black"
-                  >
 
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Название"
-                          DisplayMemberBinding="{Binding Position.Title}"/>
-                    <GridViewColumn Header="Цена"
-                          DisplayMemberBinding="{Binding Position.Cost, StringFormat={}{0} P}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+
+        <ListBox Name="baskedLb"
+          Grid.Row="1"
+       
+          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+          Padding="0">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Width="{Binding ElementName=PositionsLb, Path=ActualWidth}"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+
+                <DataTemplate>
+                    <Border BorderBrush="Black"
+                 BorderThickness="1"
+                 Height="auto"
+                 Width="auto"
+                 Margin="3">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                
+
+                            </Grid.RowDefinitions>
+
+
+                            <TextBlock Text="{Binding CPUCooling.ComponentName}"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Background="White"
+                            Padding="10 5"
+                             FontSize="12"/>
+
+                            <TextBlock Text="{Binding PowerSupply.ComponentName}"
+  HorizontalAlignment="Left"
+  VerticalAlignment="Top"
+  Background="White"
+  Padding="10 5"
+   FontSize="12"
+                                       Grid.Row="1"/>
+
+                            <TextBlock Text="{Binding Mouse.ComponentName}"
+  HorizontalAlignment="Left"
+  VerticalAlignment="Top"
+  Background="White"
+  Padding="10 5"
+  FontSize="12"
+                                       Grid.Row="2"/>
+
+
+                            <TextBlock Text="{Binding Storage.ComponentName}"
+  HorizontalAlignment="Left"
+  VerticalAlignment="Top"
+  Background="White"
+  Padding="10 5"
+  FontSize="12"
+                                       Grid.Row="3"/>
+
+                            <TextBlock Text="{Binding SystemUnit.ComponentName}"
+  HorizontalAlignment="Left"
+  VerticalAlignment="Top"
+  Background="White"
+  Padding="10 5"
+   FontSize="12"
+                                       Grid.Row="4"/>
+
+                            <TextBlock Text="{Binding RAM.ComponentName}"
+  HorizontalAlignment="Left"
+  VerticalAlignment="Top"
+  Background="White"
+  Padding="10 5"
+  FontSize="12"
+                                       Grid.Row="5"/>
+
+                            <TextBlock Text="{Binding GraphicsCard.ComponentName}"
+  HorizontalAlignment="Left"
+  VerticalAlignment="Top"
+  Background="White"
+  Padding="10 5"
+  FontSize="12"
+                                       Grid.Row="6"/>
+
+                            <TextBlock Text="{Binding Motherboard.ComponentName}"
+  HorizontalAlignment="Left"
+  VerticalAlignment="Top"
+  Background="White"
+  Padding="10 5"
+   FontSize="12"
+                                       Grid.Row="7"/>
+
+                            <TextBlock Text="{Binding Keyboard.ComponentName}"
+  HorizontalAlignment="Left"
+  VerticalAlignment="Top"
+  Background="White"
+  Padding="10 5"
+   FontSize="12"
+                                       Grid.Row="8"/>
+
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
         <Label Content="Корзина" HorizontalAlignment="Center"
                FontSize="30"
                FontWeight="SemiBold"/>
@@ -35,6 +137,7 @@
                 Grid.Row="3"
                 Content="Оплатить заказ"
                 FontSize="15"
-                Margin="10"/>
+                Margin="10"
+                Click="PayBtn_Click"/>
     </Grid>
 </Page>

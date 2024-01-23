@@ -23,6 +23,7 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -36,6 +37,10 @@
        HorizontalContentAlignment="Center"
        FontSize="15"
        Grid.Row="1"/>
+        <Label Content="Процессор"
+HorizontalContentAlignment="Center"
+FontSize="15"
+Grid.Row="9"/>
         <Label Content="Материнская плата*"
                 HorizontalContentAlignment="Center"
                 FontSize="15"
@@ -62,57 +67,73 @@ FontSize="15"
 Grid.Row="7"/>
         <Label Content="Переферия"
 HorizontalContentAlignment="Center"
-Grid.Row="9"
+Grid.Row="10"
                Grid.ColumnSpan="2"
                FontSize="20"/>
         <Label Content="Клавиатура"
 HorizontalContentAlignment="Center"
 FontSize="15"
-Grid.Row="10"/>
+Grid.Row="11"/>
         <Label Content="Мышь"
 HorizontalContentAlignment="Center"
 FontSize="15"
-Grid.Row="11"/>
+Grid.Row="12"/>
+     
         <Button Name="addNewPk"
                 Grid.Row="15"
                 Grid.ColumnSpan="2"
                 Content="Собрать"
-                Margin="10"/>
+                Margin="10"
+                Click="addNewPk_Click"/>
         <ComboBox Name="BlockCmb" 
                   Margin="10"
                   Grid.Column="1"
-                  Grid.Row="1"/>
+                  Grid.Row="1"
+                  />
+        <ComboBox Name="ProcKmb" 
+          Margin="10"
+          Grid.Column="1"
+          Grid.Row="9"
+          />
         <ComboBox Name="MaterinCmd" 
           Margin="10"
           Grid.Column="1"
-          Grid.Row="2"/>
+          Grid.Row="2" 
+                  />
         <ComboBox Name="OhladCmb" 
           Margin="10"
           Grid.Column="1"
-          Grid.Row="3"/>
+          Grid.Row="3" 
+                />
         <ComboBox Name="OperativCmd" 
           Margin="10"
           Grid.Column="1"
-          Grid.Row="4"/>
+          Grid.Row="4"
+                  />
         <ComboBox Name="DannCmb" 
           Margin="10"
           Grid.Column="1"
-          Grid.Row="5"/>
+          Grid.Row="5"
+                 />
         <ComboBox Name="BlockPitCmb" 
           Margin="10"
           Grid.Column="1"
-          Grid.Row="6"/>
+          Grid.Row="6"
+                  />
         <ComboBox Name="VidCatdCmb" 
           Margin="10"
           Grid.Column="1"
-          Grid.Row="7"/>
+          Grid.Row="7"
+                  />
         <ComboBox Name="KeyBordCmb" 
           Margin="10"
           Grid.Column="1"
-          Grid.Row="10"/>
+          Grid.Row="11"
+                  />
         <ComboBox Name="MouseCmb" 
           Margin="10"
           Grid.Column="1"
-          Grid.Row="11"/>
+          Grid.Row="12"
+                  />
     </Grid>
 </Page>

@@ -18,9 +18,9 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="30" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Image Source="/Resources/Image/Скриншот 20-01-2024 124749.jpg" Stretch="Fill" Grid.RowSpan="14" />
@@ -29,7 +29,7 @@
         <Label Grid.Row="6" Content="Пароль" />
         <Label Grid.Row="4" Content="Номер телефона" />
         <Label Grid.Row="8" Content="Повтор пароля" />
-        <TextBox Name="LoginBtn" Grid.Row="3" FontStretch="Normal" Height="60" Margin="10" Style="{StaticResource DefaultTextBoxStyle}"/>
+        <TextBox Name="LoginTb" Grid.Row="3" FontStretch="Normal" Height="60" Margin="10" Style="{StaticResource DefaultTextBoxStyle}"/>
         <TextBox Name="NamberPhone" Grid.Row="5" FontStretch="Normal" Height="60" Margin="10" Style="{StaticResource DefaultTextBoxStyle}"/>
         <PasswordBox PasswordChar="*" Name="PasswordPb" Grid.Row="7" FontStretch="Normal" Height="60" Margin="10"/>
         <PasswordBox PasswordChar="*" Name="PovtorPb" Grid.Row="9" FontStretch="Normal" Height="60" Margin="10"/>
@@ -38,16 +38,18 @@
             Margin="10"
             Height="60"
             Name="LogBtn"
-            />
+            Click="LogBtn_Click" />
         <Label Content="или"
            Grid.Row="11" 
            VerticalAlignment="Top"
-           HorizontalAlignment="Center"/>
+           HorizontalAlignment="Center"
+               />
         <Button Name="registrBtn"
             Grid.Row="10"
             Content="Заарегистрироваться"
             Height="60"
-            Margin="10"/>
+            Margin="10"
+                Click="registrBtn_Click"/>
     
     </Grid>
 </Window>

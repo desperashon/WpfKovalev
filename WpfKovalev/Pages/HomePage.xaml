@@ -20,20 +20,23 @@
         </Grid.ColumnDefinitions>
         <Label Content="Что мы можем?!" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontSize="32" FontWeight="SemiBold"/>
         <Label VerticalAlignment="Top" Content="Чем мы занимаемся?" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" />
-        <TextBlock  VerticalAlignment="Center" Text="Помогаем собрать пк вашей мечты, за приемлемую стоимость. поможем с выбором комплектующих либо же соберите сами." Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" />
+        <TextBlock  Foreground="White" Style="{Binding BlackText}" VerticalAlignment="Center" Text="Помогаем собрать пк вашей мечты, за приемлемую стоимость. поможем с выбором комплектующих либо же соберите сами." Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" />
         <Button Name="ConfigBtn"
                 Grid.Row="1"
                 Grid.Column="1"
                 Height="40"
                 VerticalAlignment="Bottom"
-                Content="Собрать самому"/>
-        <TextBlock TextWrapping="Wrap" 
+                Content="Собрать самому"
+                Click="ConfigBtn_Click"/>
+        <TextBlock  Foreground="White" Style="{Binding BlackText}" TextWrapping="Wrap" 
                    Text="Так же можете купить отдельные комплектующие и конечно проконсультировать у нас "
                    Grid.Row="2"/>
         <Button Content="Перейти в каталог"
                 Height="40"
                 Grid.Row="2"
-                VerticalAlignment="Bottom"/>
+                VerticalAlignment="Bottom"
+                Name="CatalogBtn"
+                Click="CatalogBtn_Click"/>
         <Label Content="Партнеры - топовые бренды"
                    Grid.Row="3"
                    Grid.ColumnSpan="2"

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfKovalev.Model;
 using WpfKovalev.Windows;
 
 namespace WpfKovalev
@@ -28,8 +29,30 @@ namespace WpfKovalev
 
         private void LogBtn_Click(object sender, RoutedEventArgs e)
         {
-            MidWindow midWindow = new MidWindow();
-            midWindow.Show();
+            User user = App.context.User
+                        .FirstOrDefault(w => w.Password == PasswordPb.Password && w.Login == LoginTb.Text);
+          
+            if (user != null)
+            {
+                App.enteredUser = user;
+
+                MidWindow midWindow = new MidWindow();
+                midWindow.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Неправильный код или не код а логин");
+                PasswordPb.Clear();
+                LoginTb.Clear();
+            }
+
+        }
+
+        private void registrBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrWindow registrWindow = new RegistrWindow(); 
+            registrWindow.Show();
             Close();
         }
     }

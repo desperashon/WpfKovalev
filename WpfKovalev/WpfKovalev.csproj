@@ -35,8 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +62,63 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Computer.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CPUCooling.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GraphicsCard.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Keyboard.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Message.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelKovalev.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelKovalev.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelKovalev.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelKovalev.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelKovalev.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Motherboard.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Mouse.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PowerSupply.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Processor.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RAM.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Storage.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SystemUnit.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BasketPage.xaml.cs">
       <DependentUpon>BasketPage.xaml</DependentUpon>
     </Compile>
@@ -205,6 +269,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\ModelKovalev.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelKovalev.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ModelKovalev.edmx.diagram">
+      <DependentUpon>ModelKovalev.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -245,6 +317,21 @@
     <Resource Include="Resources\Image\free-icon-tower-pc-2492254 1.png" />
     <Resource Include="Resources\Image\hdd_icon_160049 1.png" />
     <Resource Include="Resources\Image\ssd_hard_drive_storage_drive_icon_190954 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\ModelKovalev.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelKovalev.Context.cs</LastGenOutput>
+      <DependentUpon>ModelKovalev.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\ModelKovalev.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelKovalev.edmx</DependentUpon>
+      <LastGenOutput>ModelKovalev.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
