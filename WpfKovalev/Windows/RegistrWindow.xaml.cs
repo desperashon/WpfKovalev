@@ -51,7 +51,7 @@ namespace WpfKovalev.Windows
             }
             if (PasswordPb.Password == PovtorPb.Password)
             {
-
+               
             User user = new User()
             {
                 Login = LoginTb.Text,

@@ -10,9 +10,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="80" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="80" />
             <RowDefinition Height="10" />
             <RowDefinition Height="1*" />
@@ -23,8 +23,8 @@
         <Image Source="/Resources/Image/Скриншот 20-01-2024 124749.jpg" Stretch="Fill" Grid.RowSpan="11" />
         
         <Image Source="/Resources/Image/logo.png" Grid.RowSpan="2" />
-        <Label Grid.Row="2" Content="Логин" />
-        <Label Grid.Row="4" Content="Пароль" />
+        <Label Grid.Row="2" FontSize="20" Content="Логин:" />
+        <Label Grid.Row="4" FontSize="20" Content="Пароль:" />
         <TextBox Name="LoginTb" Grid.Row="3" FontStretch="Normal" Height="60" Margin="10" Style="{StaticResource DefaultTextBoxStyle}"/>
         <PasswordBox PasswordChar="*" Name="PasswordPb" Grid.Row="5" FontStretch="Normal" Height="60" Margin="10"/>
         <Button Content="Войти"
@@ -32,16 +32,19 @@
                 Margin="10"
                 Height="60"
                 Name="LogBtn"
-                Click="LogBtn_Click"/>
+                Click="LogBtn_Click"
+                FontSize="20"/>
         <Label Content="или"
                Grid.Row="8" 
                VerticalAlignment="Top"
-               HorizontalAlignment="Center"/>
+               HorizontalAlignment="Center"
+               FontSize="20"/>
         <Button Name="registrBtn"
                 Grid.Row="9"
-                Content="Заарегистрироваться"
+                Content="Зарегистрироваться"
                 Height="60"
                 Margin="10"
-                Click="registrBtn_Click"/>
+                Click="registrBtn_Click"
+                FontSize="20"/>
     </Grid>
 </Window>
