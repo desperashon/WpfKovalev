@@ -12,16 +12,13 @@ namespace WpfKovalev.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Processor
+    public partial class OrderProduct
     {
-        public Processor()
-        {
-            this.Computer = new HashSet<Computer>();
-        }
+        public int OrderProductId { get; set; }
+        public Nullable<int> ProductId { get; set; }
+        public Nullable<int> OrderId { get; set; }
     
-        public int ProcessorID { get; set; }
-        public string ComponentName { get; set; }
-    
-        public virtual ICollection<Computer> Computer { get; set; }
+        public virtual Order Order { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

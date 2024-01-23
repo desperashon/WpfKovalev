@@ -13,10 +13,10 @@ namespace WpfKovalev.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class KovalevEntities : DbContext
+    public partial class RestartKovalevEntities : DbContext
     {
-        public KovalevEntities()
-            : base("name=KovalevEntities")
+        public RestartKovalevEntities()
+            : base("name=RestartKovalevEntities")
         {
         }
     
@@ -25,19 +25,12 @@ namespace WpfKovalev.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Computer> Computer { get; set; }
-        public DbSet<CPUCooling> CPUCooling { get; set; }
-        public DbSet<GraphicsCard> GraphicsCard { get; set; }
-        public DbSet<Keyboard> Keyboard { get; set; }
         public DbSet<Message> Message { get; set; }
-        public DbSet<Motherboard> Motherboard { get; set; }
-        public DbSet<Mouse> Mouse { get; set; }
-        public DbSet<PowerSupply> PowerSupply { get; set; }
-        public DbSet<Processor> Processor { get; set; }
-        public DbSet<RAM> RAM { get; set; }
-        public DbSet<Storage> Storage { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<OrderProduct> OrderProduct { get; set; }
+        public DbSet<Product> Product { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public DbSet<SystemUnit> SystemUnit { get; set; }
+        public DbSet<TypeProduct> TypeProduct { get; set; }
         public DbSet<User> User { get; set; }
     }
 }

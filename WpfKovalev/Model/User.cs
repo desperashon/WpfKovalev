@@ -16,8 +16,8 @@ namespace WpfKovalev.Model
     {
         public User()
         {
-            this.Computer = new HashSet<Computer>();
             this.Message = new HashSet<Message>();
+            this.Order = new HashSet<Order>();
         }
     
         public int UserID { get; set; }
@@ -28,7 +28,7 @@ namespace WpfKovalev.Model
         public string DeliveryAddress { get; set; }
         public string PaymentMethod { get; set; }
     
-        public virtual ICollection<Computer> Computer { get; set; }
         public virtual ICollection<Message> Message { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

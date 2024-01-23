@@ -15,120 +15,26 @@
         </Grid.RowDefinitions>
 
 
-        <ListBox Name="baskedLb"
-          Grid.Row="1"
-       
-          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-          Padding="0">
+        <ListBox Name="basketLb" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Padding="0">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel Width="{Binding ElementName=PositionsLb, Path=ActualWidth}"/>
+                    <WrapPanel Width="{Binding ElementName=basketLb, Path=ActualWidth}" />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
-
                 <DataTemplate>
-                    <Border BorderBrush="Black"
-                 BorderThickness="1"
-                 Height="auto"
-                 Width="auto"
-                 Margin="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
+                    <Border BorderBrush="Black" BorderThickness="1" Height="200" Width="200" Margin="3">
+                        <StackPanel>
+                            <TextBlock Text="Заказ" FontWeight="Bold" FontSize="16"/>
+                            <ListBox ItemsSource="{Binding OrderProduct}" DisplayMemberPath="Product.ComponentName">
                                 
-
-                            </Grid.RowDefinitions>
-
-
-                            <TextBlock Text="{Binding CPUCooling.ComponentName}"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Top"
-                            Background="White"
-                            Padding="10 5"
-                             FontSize="12"/>
-
-                            <TextBlock Text="{Binding PowerSupply.ComponentName}"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Top"
-  Background="White"
-  Padding="10 5"
-   FontSize="12"
-                                       Grid.Row="1"/>
-
-                            <TextBlock Text="{Binding Mouse.ComponentName}"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Top"
-  Background="White"
-  Padding="10 5"
-  FontSize="12"
-                                       Grid.Row="2"/>
-
-
-                            <TextBlock Text="{Binding Storage.ComponentName}"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Top"
-  Background="White"
-  Padding="10 5"
-  FontSize="12"
-                                       Grid.Row="3"/>
-
-                            <TextBlock Text="{Binding SystemUnit.ComponentName}"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Top"
-  Background="White"
-  Padding="10 5"
-   FontSize="12"
-                                       Grid.Row="4"/>
-
-                            <TextBlock Text="{Binding RAM.ComponentName}"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Top"
-  Background="White"
-  Padding="10 5"
-  FontSize="12"
-                                       Grid.Row="5"/>
-
-                            <TextBlock Text="{Binding GraphicsCard.ComponentName}"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Top"
-  Background="White"
-  Padding="10 5"
-  FontSize="12"
-                                       Grid.Row="6"/>
-
-                            <TextBlock Text="{Binding Motherboard.ComponentName}"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Top"
-  Background="White"
-  Padding="10 5"
-   FontSize="12"
-                                       Grid.Row="7"/>
-
-                            <TextBlock Text="{Binding Keyboard.ComponentName}"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Top"
-  Background="White"
-  Padding="10 5"
-   FontSize="12"
-                                       Grid.Row="8"/>
-
-
-                        </Grid>
+                            </ListBox>
+                        </StackPanel>
                     </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
 
         <Label Content="Корзина" HorizontalAlignment="Center"
                FontSize="30"

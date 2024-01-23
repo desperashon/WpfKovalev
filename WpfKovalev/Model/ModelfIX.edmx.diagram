@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ad7db5031544fc3b6da0ea79d648834" Name="Diagram1">
+        <EntityTypeShape EntityType="RestartKovalevModel.Message" Width="1.5" PointX="3" PointY="3.75" />
+        <EntityTypeShape EntityType="RestartKovalevModel.Order" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="RestartKovalevModel.OrderProduct" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="RestartKovalevModel.Product" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="RestartKovalevModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="RestartKovalevModel.TypeProduct" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="RestartKovalevModel.User" Width="1.5" PointX="0.75" PointY="2" />
+        <AssociationConnector Association="RestartKovalevModel.FK_Message_User" />
+        <AssociationConnector Association="RestartKovalevModel.FK_Order_User" />
+        <AssociationConnector Association="RestartKovalevModel.FK_OrderProduct_Order" />
+        <AssociationConnector Association="RestartKovalevModel.FK_OrderProduct_Product" />
+        <AssociationConnector Association="RestartKovalevModel.FK_Product_TypeProduct" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

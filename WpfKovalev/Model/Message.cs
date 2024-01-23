@@ -15,7 +15,7 @@ namespace WpfKovalev.Model
     public partial class Message
     {
         public int IdMessage { get; set; }
-        public Nullable<int> UserID { get; set; }
+        public Nullable<int> UserId { get; set; }
         public string text { get; set; }
     
         public virtual User User { get; set; }

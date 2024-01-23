@@ -22,52 +22,58 @@ namespace WpfKovalev.Pages
     /// </summary>
     public partial class ComfigPage : Page
     {
+        public List<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>();
         public ComfigPage()
         {
             InitializeComponent();
-            BlockPitCmb.SelectedValuePath = "PowerSupplyID";
+
+            BlockPitCmb.SelectedValuePath = "ProductId";
             BlockPitCmb.DisplayMemberPath = "ComponentName";
-            BlockPitCmb.ItemsSource = App.context.PowerSupply.ToList();
+            BlockPitCmb.ItemsSource = LoadProductsByType(1);
 
-            MouseCmb.SelectedValuePath = "MouseID";
+            MouseCmb.SelectedValuePath = "ProductId";
             MouseCmb.DisplayMemberPath = "ComponentName";
-            MouseCmb.ItemsSource = App.context.Mouse.ToList();
+            MouseCmb.ItemsSource = LoadProductsByType(2);
 
-            BlockCmb.SelectedValuePath = "SystemUnitID";
+            BlockCmb.SelectedValuePath = "ProductId";
             BlockCmb.DisplayMemberPath = "ComponentName";
-            BlockCmb.ItemsSource = App.context.SystemUnit.ToList();
+            BlockCmb.ItemsSource = LoadProductsByType(3);
 
-            MaterinCmd.SelectedValuePath = "MotherboardID";
+            MaterinCmd.SelectedValuePath = "ProductId";
             MaterinCmd.DisplayMemberPath = "ComponentName";
-            MaterinCmd.ItemsSource = App.context.Motherboard.ToList();
+            MaterinCmd.ItemsSource = LoadProductsByType(4);
 
-            OhladCmb.SelectedValuePath = "CPUCoolingID";
+            OhladCmb.SelectedValuePath = "ProductId";
             OhladCmb.DisplayMemberPath = "ComponentName";
-            OhladCmb.ItemsSource = App.context.CPUCooling.ToList();
+            OhladCmb.ItemsSource = LoadProductsByType(5);
 
-            OperativCmd.SelectedValuePath = "RAMID";
+            OperativCmd.SelectedValuePath = "ProductId";
             OperativCmd.DisplayMemberPath = "ComponentName";
-            OperativCmd.ItemsSource = App.context.RAM.ToList();
+            OperativCmd.ItemsSource = LoadProductsByType(6);
 
-            DannCmb.SelectedValuePath = "StorageID";
+            DannCmb.SelectedValuePath = "ProductId";
             DannCmb.DisplayMemberPath = "ComponentName";
-            DannCmb.ItemsSource = App.context.Storage.ToList();
+            DannCmb.ItemsSource = LoadProductsByType(7);
 
-            VidCatdCmb.SelectedValuePath = "GraphicsCardID";
+            VidCatdCmb.SelectedValuePath = "ProductId";
             VidCatdCmb.DisplayMemberPath = "ComponentName";
-            VidCatdCmb.ItemsSource = App.context.GraphicsCard.ToList();
+            VidCatdCmb.ItemsSource = LoadProductsByType(8);
 
-            KeyBordCmb.SelectedValuePath = "KeyboardID";
+            KeyBordCmb.SelectedValuePath = "ProductId";
             KeyBordCmb.DisplayMemberPath = "ComponentName";
-            KeyBordCmb.ItemsSource = App.context.Keyboard.ToList();
+            KeyBordCmb.ItemsSource = LoadProductsByType(9);
 
-
-            ProcKmb.SelectedValuePath = "ProcessorID";
+            ProcKmb.SelectedValuePath = "ProductId";
             ProcKmb.DisplayMemberPath = "ComponentName";
-            ProcKmb.ItemsSource = App.context.Processor.ToList();
-
-        
+            ProcKmb.ItemsSource = LoadProductsByType(10);
         }
+
+        private List<Product> LoadProductsByType(int typeId)
+        {
+            // Загрузите продукты из базы данных, отфильтрованные по типу
+            return App.context.Product.Where(product => product.TypeProductId == typeId).ToList();
+        }
+
 
         private void addNewPk_Click(object sender, RoutedEventArgs e)
         {
@@ -114,23 +120,31 @@ namespace WpfKovalev.Pages
                 return;
             }
 
-            Computer computer = new Computer()
+
+
+            Order order = new Order()
             {
-                SystemUnit = BlockCmb.SelectedItem as SystemUnit,
-                Processor = ProcKmb.SelectedItem as Processor,
-                Motherboard = MaterinCmd.SelectedItem as Motherboard,
-                CPUCooling = OhladCmb.SelectedItem as CPUCooling,
-                RAM = OperativCmd.SelectedItem as RAM,
-                Storage = DannCmb.SelectedItem as Storage,
-                PowerSupply = BlockPitCmb.SelectedItem as PowerSupply,
-                GraphicsCard = VidCatdCmb.SelectedItem as GraphicsCard,
-                Keyboard = KeyBordCmb.SelectedItem as Model.Keyboard,
-                Mouse = MouseCmb.SelectedItem as Model.Mouse,
-                IdUser = App.enteredUser.UserID,
+                UserId = App.enteredUser.UserID,
+                OrderProduct = new List<OrderProduct>()
             };
-            App.context.Computer.Add(computer);
+
+            // Добавляем выбранные продукты в коллекцию OrderProducts
+            order.OrderProduct.Add(new OrderProduct { ProductId = (BlockPitCmb.SelectedItem as Product)?.ProductId ?? 0 });
+            order.OrderProduct.Add(new OrderProduct { ProductId = (MouseCmb.SelectedItem as Product)?.ProductId ?? 0 });
+            order.OrderProduct.Add(new OrderProduct { ProductId = (BlockCmb.SelectedItem as Product)?.ProductId ?? 0 });
+            order.OrderProduct.Add(new OrderProduct { ProductId = (MaterinCmd.SelectedItem as Product)?.ProductId ?? 0 });
+            order.OrderProduct.Add(new OrderProduct { ProductId = (OhladCmb.SelectedItem as Product)?.ProductId ?? 0 });
+            order.OrderProduct.Add(new OrderProduct { ProductId = (OperativCmd.SelectedItem as Product)?.ProductId ?? 0 });
+            order.OrderProduct.Add(new OrderProduct { ProductId = (DannCmb.SelectedItem as Product)?.ProductId ?? 0 });
+            order.OrderProduct.Add(new OrderProduct { ProductId = (VidCatdCmb.SelectedItem as Product)?.ProductId ?? 0 });
+            order.OrderProduct.Add(new OrderProduct { ProductId = (KeyBordCmb.SelectedItem as Product)?.ProductId ?? 0 });
+            order.OrderProduct.Add(new OrderProduct { ProductId = (ProcKmb.SelectedItem as Product)?.ProductId ?? 0 });
+
+            // Добавляем order в контекст данных
+            App.context.Order.Add(order);
             App.context.SaveChanges();
-            MessageBox.Show("Товар добавлен к корзину");
+
+            MessageBox.Show("Товары добавлены в корзину");
 
 
         }

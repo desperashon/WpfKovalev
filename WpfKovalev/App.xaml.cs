@@ -14,7 +14,7 @@ namespace WpfKovalev
     /// </summary>
     public partial class App : Application
     {
-        public static KovalevEntities context = new KovalevEntities();
+        public static RestartKovalevEntities context = new RestartKovalevEntities();
 
         public static User enteredUser;
     }

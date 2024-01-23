@@ -12,16 +12,16 @@ namespace WpfKovalev.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Mouse
+    public partial class TypeProduct
     {
-        public Mouse()
+        public TypeProduct()
         {
-            this.Computer = new HashSet<Computer>();
+            this.Product = new HashSet<Product>();
         }
     
-        public int MouseID { get; set; }
-        public string ComponentName { get; set; }
+        public int TypeProductId { get; set; }
+        public string name { get; set; }
     
-        public virtual ICollection<Computer> Computer { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

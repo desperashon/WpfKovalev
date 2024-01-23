@@ -62,62 +62,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Computer.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\CPUCooling.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\GraphicsCard.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Keyboard.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Message.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
+      <DependentUpon>ModelfIX.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\ModelKovalev.Context.cs">
+    <Compile Include="Model\ModelfIX.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelKovalev.Context.tt</DependentUpon>
+      <DependentUpon>ModelfIX.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\ModelKovalev.cs">
+    <Compile Include="Model\ModelfIX.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
+      <DependentUpon>ModelfIX.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\ModelKovalev.Designer.cs">
+    <Compile Include="Model\ModelfIX.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelKovalev.edmx</DependentUpon>
+      <DependentUpon>ModelfIX.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Motherboard.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    <Compile Include="Model\Order.cs">
+      <DependentUpon>ModelfIX.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Mouse.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    <Compile Include="Model\OrderProduct.cs">
+      <DependentUpon>ModelfIX.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\PowerSupply.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Processor.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\RAM.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Storage.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    <Compile Include="Model\Product.cs">
+      <DependentUpon>ModelfIX.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagrams.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
+      <DependentUpon>ModelfIX.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\SystemUnit.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
+    <Compile Include="Model\TypeProduct.cs">
+      <DependentUpon>ModelfIX.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs">
-      <DependentUpon>ModelKovalev.tt</DependentUpon>
+      <DependentUpon>ModelfIX.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\BasketPage.xaml.cs">
       <DependentUpon>BasketPage.xaml</DependentUpon>
@@ -269,12 +248,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\ModelKovalev.edmx">
+    <EntityDeploy Include="Model\ModelfIX.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelKovalev.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelfIX.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\ModelKovalev.edmx.diagram">
-      <DependentUpon>ModelKovalev.edmx</DependentUpon>
+    <None Include="Model\ModelfIX.edmx.diagram">
+      <DependentUpon>ModelfIX.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -319,19 +298,19 @@
     <Resource Include="Resources\Image\ssd_hard_drive_storage_drive_icon_190954 1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\ModelKovalev.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelKovalev.Context.cs</LastGenOutput>
-      <DependentUpon>ModelKovalev.edmx</DependentUpon>
-    </Content>
-    <Content Include="Model\ModelKovalev.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelKovalev.edmx</DependentUpon>
-      <LastGenOutput>ModelKovalev.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Model\ModelfIX.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelfIX.edmx</DependentUpon>
+      <LastGenOutput>ModelfIX.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ModelfIX.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelfIX.edmx</DependentUpon>
+      <LastGenOutput>ModelfIX.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
