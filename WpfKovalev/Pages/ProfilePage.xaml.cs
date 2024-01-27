@@ -23,6 +23,14 @@ namespace WpfKovalev.Pages
         public ProfilePage()
         {
             InitializeComponent();
+            if (App.enteredUser != null)
+            {
+                
+                LoginTb.Text = App.enteredUser.Login;
+                NumberPhoneTb.Text = App.enteredUser.PhoneNumber;
+                EmailTb.Text = App.enteredUser.Email;
+                AdressTb.Text = App.enteredUser.DeliveryAddress;
+            }
         }
     }
 }

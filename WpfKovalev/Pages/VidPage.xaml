@@ -17,8 +17,27 @@
         <Label Content="Видеокарты" HorizontalAlignment="Center"
        FontSize="30"
        FontWeight="SemiBold"/>
-        <DataGrid Grid.Row="1">
+        <DataGrid AutoGenerateColumns="False" Name="Datagr" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding ComponentName}" />
 
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Действие" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+
+                                <Button Click="BasketBtn_Click" Content="В корзину" Command="{Binding DataContext.AddToOrderCommand, RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}" />
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </Page>

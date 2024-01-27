@@ -41,7 +41,7 @@
                FontWeight="SemiBold"/>
         <Button Name="PayBtn"
                 Grid.Row="3"
-                Content="Оплатить заказ"
+                Content="Передать заказ в доставку"
                 FontSize="15"
                 Margin="10"
                 Click="PayBtn_Click"/>

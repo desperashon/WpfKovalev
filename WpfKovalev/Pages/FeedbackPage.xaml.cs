@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfKovalev.Model;
 
 namespace WpfKovalev.Pages
 {
@@ -24,5 +25,36 @@ namespace WpfKovalev.Pages
         {
             InitializeComponent();
         }
+
+        private void OtpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string mes = "";
+            if (string.IsNullOrWhiteSpace(MeaasngeTb.Text))
+            {
+                mes += "Введите сообщение\n";
+            }
+           
+            if (mes != "")
+            {
+                MessageBox.Show(mes);
+                return;
+            }
+
+            Message message = new Message()
+            {
+                text = MeaasngeTb.Text,
+                UserId = App.enteredUser.UserID,
+            };
+           
+
+ 
+            App.context.Message.Add(message);
+            App.context.SaveChanges();
+
+            MessageBox.Show("Сообщение отправленно");
+            MeaasngeTb.Text = "";
+
+        }
     }
 }
+

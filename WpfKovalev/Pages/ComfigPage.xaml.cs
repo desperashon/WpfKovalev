@@ -70,7 +70,7 @@ namespace WpfKovalev.Pages
 
         private List<Product> LoadProductsByType(int typeId)
         {
-            // Загрузите продукты из базы данных, отфильтрованные по типу
+          
             return App.context.Product.Where(product => product.TypeProductId == typeId).ToList();
         }
 
@@ -128,7 +128,7 @@ namespace WpfKovalev.Pages
                 OrderProduct = new List<OrderProduct>()
             };
 
-            // Добавляем выбранные продукты в коллекцию OrderProducts
+          
             order.OrderProduct.Add(new OrderProduct { ProductId = (BlockPitCmb.SelectedItem as Product)?.ProductId ?? 0 });
             order.OrderProduct.Add(new OrderProduct { ProductId = (MouseCmb.SelectedItem as Product)?.ProductId ?? 0 });
             order.OrderProduct.Add(new OrderProduct { ProductId = (BlockCmb.SelectedItem as Product)?.ProductId ?? 0 });
@@ -140,7 +140,6 @@ namespace WpfKovalev.Pages
             order.OrderProduct.Add(new OrderProduct { ProductId = (KeyBordCmb.SelectedItem as Product)?.ProductId ?? 0 });
             order.OrderProduct.Add(new OrderProduct { ProductId = (ProcKmb.SelectedItem as Product)?.ProductId ?? 0 });
 
-            // Добавляем order в контекст данных
             App.context.Order.Add(order);
             App.context.SaveChanges();
 

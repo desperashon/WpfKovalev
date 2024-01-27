@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfKovalev.Model;
 
 namespace WpfKovalev.Pages
 {
@@ -23,6 +24,55 @@ namespace WpfKovalev.Pages
         public VidPage()
         {
             InitializeComponent();
+            Datagr.ItemsSource = App.context.Product.ToList();
+            LoadProductsByType(7);
+        }
+
+        private void BasketBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null)
+            {
+                var item = button.DataContext as Product; 
+
+                if (item != null)
+                {
+                   
+                    Order order = new Order
+                    {
+                        UserId = App.enteredUser.UserID,
+                        OrderProduct = new List<OrderProduct>() 
+                    };
+
+                  
+                    OrderProduct orderProduct = new OrderProduct
+                    {
+                        ProductId = item.ProductId
+                    };
+
+                   
+                    order.OrderProduct.Add(orderProduct);
+
+             
+                    App.context.Order.Add(order);
+
+                  
+                    App.context.SaveChanges();
+
+                    MessageBox.Show("Товар добавлен в корзину!");
+                }
+            }
+        }
+        private void LoadProductsByType(int typeId)
+        {
+           
+            Datagr.ItemsSource = null;
+
+            
+            var products = App.context.Product.Where(p => p.TypeProductId == typeId).ToList();
+
+           
+            Datagr.ItemsSource = products;
         }
     }
 }

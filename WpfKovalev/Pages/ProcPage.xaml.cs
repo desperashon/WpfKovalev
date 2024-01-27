@@ -24,33 +24,58 @@ namespace WpfKovalev.Pages
         public ProcPage()
         {
             InitializeComponent();
-            //Datagr.ItemsSource = App.context.Processor.ToList();
+            Datagr.ItemsSource = App.context.Product.ToList();
+            LoadProductsByType(5);
         }
 
         private void BasketBtn_Click(object sender, RoutedEventArgs e)
         {
-            //// Получаем товар, соответствующий нажатой кнопке
-            //var button = sender as Button;
-            //if (button != null)
-            //{
-            //    var item = button.DataContext as Processor; // Замените YourItemType на тип элемента в вашем DataGrid
+            var button = sender as Button;
+            if (button != null)
+            {
+                var item = button.DataContext as Product; 
 
-            //    if (item != null)
-            //    {
-            //        // Добавляем товар в заказ
-            //        AddItemToOrder(item);
+                if (item != null)
+                {
+          
+                    Order order = new Order
+                    {
+                        UserId = App.enteredUser.UserID,
+                        OrderProduct = new List<OrderProduct>() 
+                    };
 
-            //        // Здесь можно добавить логику обновления отображения заказа или других действий
-            //    }
-            //}
+             
+                    OrderProduct orderProduct = new OrderProduct
+                    {
+                        ProductId = item.ProductId
+                    };
+
+                   
+                    order.OrderProduct.Add(orderProduct);
+
+                    App.context.Order.Add(order);
+
+                
+                    App.context.SaveChanges();
+
+                    MessageBox.Show("Товар добавлен в корзину!");
+                }
+            }
+        }
+        private void LoadProductsByType(int typeId)
+        {
+            
+            Datagr.ItemsSource = null;
+
+           
+            var products = App.context.Product.Where(p => p.TypeProductId == typeId).ToList();
+
+    
+            Datagr.ItemsSource = products;
         }
 
-        //private void AddItemToOrder(Processor item)
-        //{
-        //    // Здесь должен быть ваш код для добавления товара в заказ
-        //    // Например, вы можете иметь класс заказа и вызвать его метод для добавления товара
-        //    // order.AddItem(item);
-        //    App.context.Computer.Add(item);
-        //}
+
+
+
     }
 }

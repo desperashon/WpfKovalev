@@ -12,7 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="1*" />
-            
+
         </Grid.RowDefinitions>
         <Label Content="Процессоры" HorizontalAlignment="Center"
            FontSize="30"
@@ -20,7 +20,7 @@
         <DataGrid AutoGenerateColumns="False" Name="Datagr" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Binding="{Binding ComponentName}" />
-                
+
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
@@ -31,8 +31,8 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
 
-                                <Button x:Name="BasketBtn" Content="В корзину" Click="BasketBtn_Click" />
-                               
+                                <Button Click="BasketBtn_Click" Content="В корзину" Command="{Binding DataContext.AddToOrderCommand, RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}" />
+
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
