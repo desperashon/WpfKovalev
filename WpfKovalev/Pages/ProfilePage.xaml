@@ -5,66 +5,41 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfKovalev.Pages"
       mc:Ignorable="d" 
-       d:DesignHeight="670" d:DesignWidth="360">
+      d:DesignHeight="670" d:DesignWidth="360">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Label Content="Профиль"
-HorizontalContentAlignment="Center"
-FontSize="20"
-Grid.Row="0"
-               Grid.ColumnSpan="2"
-               FontWeight="SemiBold"/>
-        <Label Content="Логин"
-HorizontalContentAlignment="Center"
-FontSize="15"
-Grid.Row="1"/>
-        <Label Content="Номер телефона"
-HorizontalContentAlignment="Center"
-FontSize="15"
-Grid.Row="2"/>
-        <Label Content="Email"
-HorizontalContentAlignment="Center"
-FontSize="15"
-Grid.Row="3"/>
-        <Label Content="Адрес доставки"
-HorizontalContentAlignment="Center"
-FontSize="15"
-Grid.Row="4"/>
-        <TextBlock
-            Grid.Row="1"
-            Grid.Column="1"
-            Height="60"
-            Name="LoginTb"
-            Foreground="White"
-            />
-        <TextBlock
-    Grid.Row="2"
-    Grid.Column="1"
-    Height="60"
-            Name="NumberPhoneTb"
-            Foreground="White"/>
-        <TextBlock
-    Grid.Row="3"
-    Grid.Column="1"
-    Height="60" Name="EmailTb"
-            Foreground="White"/>
-        <TextBlock
-    Grid.Row="4"
-    Grid.Column="1"
-    Height="60" Name="AdressTb"
-            Foreground="White"/>
-     
-      
+
+        <!-- Labels -->
+        <Label Content="Профиль" FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <Label Content="Логин" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
+        <Label Content="Номер телефона" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"/>
+        <Label Content="Email" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"/>
+        <Label Content="Адрес доставки" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"/>
+
+        <!-- TextBlocks -->
+        <TextBlock Name="LoginTb" Foreground="White" Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Center"/>
+        <TextBlock Name="NumberPhoneTb" Foreground="White" Grid.Row="2" Grid.Column="1" Height="30" VerticalAlignment="Center"/>
+        <TextBlock Name="EmailTb" Foreground="White" Grid.Row="3" Grid.Column="1" Height="30" VerticalAlignment="Center"/>
+        <TextBlock Name="AdressTb" Foreground="White" Grid.Row="4" Grid.Column="1" Height="30" VerticalAlignment="Center"/>
+
+        <!-- DataGrid -->
+        <DataGrid Name="OrdersDataGrid" Grid.Row="5" Grid.ColumnSpan="2" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding Orders}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер заказа" Binding="{Binding OrderId}" />
+                <DataGridTextColumn Header="Статус" Binding="{Binding IsPaid}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

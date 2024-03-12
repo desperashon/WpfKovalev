@@ -49,6 +49,9 @@ namespace WpfKovalev.Windows
                 MessageBox.Show(mes);
                 return;
             }
+            //if ((LoginTb.Text.Length > 10) && (NamberPhone.Text.Length >10))
+            //{
+                
             if (PasswordPb.Password == PovtorPb.Password)
             {
                
@@ -70,6 +73,11 @@ namespace WpfKovalev.Windows
             {
                 MessageBox.Show("Пароли не совпадают!");
             }
+            
+            //else
+            //{
+            //    MessageBox.Show("Login минумум 10 символов!");
+            //}
         }
 
         private void LogBtn_Click(object sender, RoutedEventArgs e)
