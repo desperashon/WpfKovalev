@@ -5,82 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfKovalev.Windows"
         mc:Ignorable="d"
-       Height="800" Width="360" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+        Title="Главное окно"
+        Height="768" Width="1366" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
+            <RowDefinition Height="100" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="70" />
         </Grid.RowDefinitions>
-        <Image Source="/Resources/Image/Скриншот 20-01-2024 124749.jpg" Stretch="Fill" Grid.Row="1"/>
-        <Grid Background="#E05950">
-            <Image HorizontalAlignment="Center"  Stretch="Uniform" Source="/Resources/Image/logo.png" />
-            <Button Name="ProfileBtn" Click="ProfileBtn_Click" Width="60" HorizontalAlignment="Right">
+
+        <Image Source="/Resources/Image/Скриншот 20-01-2024 124749.jpg" Stretch="Fill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+
+        <Grid Background="#E05950" Grid.Row="0" Grid.ColumnSpan="2">
+            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Source="/Resources/Image/logo.png" Height="80" />
+            <Button Name="ProfileBtn" Click="ProfileBtn_Click" Width="60" Height="60" HorizontalAlignment="Right" Margin="10">
                 <Button.Background>
-                    <ImageBrush ImageSource="/Resources/Image/icons8-пользователь-мужчина-в-кружке-50.png">
-                    </ImageBrush>
+                    <ImageBrush ImageSource="/Resources/Image/icons8-пользователь-мужчина-в-кружке-50.png"/>
                 </Button.Background>
             </Button>
         </Grid>
-        <Grid Grid.Row="2" Background="#E05850" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
-                <RowDefinition Height="20" />
-            </Grid.RowDefinitions>
-            <Button   Height="50" Grid.Column="0" Grid.Row="0" Name="HomeBtn" Click="HomeBtn_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="\Resources\Image\icons8-dog-house-32.png" Stretch="Uniform">
-                    </ImageBrush>
-                </Button.Background>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="#E05850">
+            <Button Height="60" Margin="10" Name="HomeBtn" Click="HomeBtn_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Image/icons8-dog-house-32.png" Height="32" Width="32"/>
+                    <Label Content="Домашний экран" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
+                </StackPanel>
             </Button>
-            <Label Grid.Row="1" HorizontalContentAlignment="Center" Grid.Column="0" FontSize="5" Content="Домашний экран"  VerticalAlignment="Top"    Height="18"/>
-            
-            <Button Name="ConfigBtn"  Click="ConfigBtn_Click"  Height="50" Grid.Column="1" Grid.Row="0">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Resources/Image/image 1.png" 
-                        Stretch="Uniform">
-                    </ImageBrush>
-                </Button.Background>
+
+            <Button Height="60" Margin="10" Name="ConfigBtn" Click="ConfigBtn_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Image/image 1.png" Height="32" Width="32"/>
+                    <Label Content="Собрать ПК" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
+                </StackPanel>
             </Button>
-            <Label HorizontalContentAlignment="Center" Grid.Column="1" FontSize="5" Content="Cобрать Пк"  VerticalAlignment="Top" Grid.Row="2"  Height="18"/>
-            
-            <Button Name="CatalogBtn" Click="CatalogBtn_Click"  Height="50" Grid.Column="2" Grid.Row="0">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Resources/Image/image 2.png" Stretch="Uniform">
-                    </ImageBrush>
-                </Button.Background>
+
+            <Button Height="60" Margin="10" Name="CatalogBtn" Click="CatalogBtn_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Image/image 2.png" Height="32" Width="32"/>
+                    <Label Content="Каталог" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
+                </StackPanel>
             </Button>
-            <Label HorizontalContentAlignment="Center" Grid.Column="2" FontSize="5" Content="Каталог"  VerticalAlignment="Top" Grid.Row="2"  Height="18"/>
-           
-            <Button Name="BasketBtn" Click="BasketBtn_Click"  Height="50" Grid.Column="3" Grid.Row="0">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Resources/Image/Vector.png" 
-                        Stretch="Uniform">
-                    </ImageBrush>
-                </Button.Background>
+
+            <Button Height="60" Margin="10" Name="BasketBtn" Click="BasketBtn_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Image/Vector.png" Height="32" Width="32"/>
+                    <Label Content="Корзина" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
+                </StackPanel>
             </Button>
-            <Label HorizontalContentAlignment="Center" Grid.Column="3" FontSize="5" Content="Корзина"  VerticalAlignment="Top" Grid.Row="2"  Height="18"/>
-            
-            <Button Name="FeedBackBtn" Click="FeedBackBtn_Click"  Height="50" Grid.Column="4" Grid.Row="0">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Resources/Image/image 3.png" Stretch="Uniform">
-                    </ImageBrush>
-                </Button.Background>
+
+            <Button Height="60" Margin="10" Name="FeedBackBtn" Click="FeedBackBtn_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Image/image 3.png" Height="32" Width="32"/>
+                    <Label Content="Обратная связь" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
+                </StackPanel>
             </Button>
-            <Label HorizontalContentAlignment="Center" Grid.Column="4" FontSize="5" Content="Обратная связь"  VerticalAlignment="Top" Grid.Row="2" Height="18"/>
-           
-            
-        </Grid>
-        <Frame x:Name="MainFrm" 
-           Grid.Row="1" 
-           Margin="0 10" 
-           NavigationUIVisibility="Hidden"/>
+        </StackPanel>
+
+        <Frame x:Name="MainFrm" Grid.Row="1" Grid.Column="1" Margin="10" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

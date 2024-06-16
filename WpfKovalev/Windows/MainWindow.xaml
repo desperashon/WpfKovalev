@@ -5,46 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfKovalev"
         mc:Ignorable="d"
-        Height="800" Width="360" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Вход"
+        Height="768" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="StyledLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Opacity" Value="0.8"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+        <Style x:Key="StyledButton" TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Background" Value="#E05850"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+
+        <Style x:Key="StyledTextBox" TargetType="TextBox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        <Style x:Key="StyledPasswordBox" TargetType="PasswordBox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="10" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>
-        <Image Source="/Resources/Image/Скриншот 20-01-2024 124749.jpg" Stretch="Fill" Grid.RowSpan="11" />
-        
-        <Image Source="/Resources/Image/logo.png" Grid.RowSpan="2" />
-        <Label Grid.Row="2" FontSize="20" Content="Логин:" />
-        <Label Grid.Row="4" FontSize="20" Content="Пароль:" />
-        <TextBox Name="LoginTb" Grid.Row="3" FontStretch="Normal" Height="60" Margin="10" Style="{StaticResource DefaultTextBoxStyle}"/>
-        <PasswordBox PasswordChar="*" Name="PasswordPb" Grid.Row="5" FontStretch="Normal" Height="60" Margin="10"/>
-        <Button Content="Войти"
-                Grid.Row="7"
-                Margin="10"
-                Height="60"
+        <Image Source="/Resources/Image/Скриншот 20-01-2024 124749.jpg" Stretch="Fill" />
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Background="Gray" Margin="20"  Opacity="0.9">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Image Source="/Resources/Image/logo.png" Grid.Row="0" Height="150" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <Label Style="{StaticResource StyledLabel}" Grid.Row="1" Content="Логин" Width="82"/>
+            <TextBox Name="LoginTb" Grid.Row="2" Style="{StaticResource StyledTextBox}"/>
+
+            <Label Style="{StaticResource StyledLabel}" Grid.Row="3" Content="Пароль" Width="82"/>
+            <PasswordBox PasswordChar="*" Name="PasswordPb" Grid.Row="4" Style="{StaticResource StyledPasswordBox}"/>
+
+            <Button Content="Войти"
+                Grid.Row="5"
                 Name="LogBtn"
                 Click="LogBtn_Click"
-                FontSize="20"/>
-        <Label Content="или"
-               Grid.Row="8" 
-               VerticalAlignment="Top"
-               HorizontalAlignment="Center"
-               FontSize="20"/>
-        <Button Name="registrBtn"
-                Grid.Row="9"
-                Content="Зарегистрироваться"
-                Height="60"
-                Margin="10"
+                Style="{StaticResource StyledButton}"/>
+
+            <Label Style="{StaticResource StyledLabel}" Content="или" Grid.Row="6" FontSize="15" Background="White" Opacity="0.7" Width="40"/>
+
+            <Button Content="Зарегистрироваться"
+                Grid.Row="7"
+                Name="registrBtn"
                 Click="registrBtn_Click"
-                FontSize="20"/>
+                Style="{StaticResource StyledButton}"/>
+        </Grid>
     </Grid>
 </Window>
